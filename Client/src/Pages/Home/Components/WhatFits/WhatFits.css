@@ -1,0 +1,137 @@
+.weDoWorkTxt{
+    font-family: 'Barlow';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 141.6%;
+/* identical to box height, or 85px */
+margin-top: 15px;
+
+margin-bottom: 0px;
+color: #25282A;
+
+}
+.paraTxtWeDorWork{
+    font-family: 'Barlow';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+margin-bottom: 0px;
+line-height: 141.6%;
+/* or 42px */
+margin-top: 0px;
+
+
+color: #25282A;
+
+
+}
+
+.card1txtWhatFit {
+    background: #25282A;
+    border-radius: 10px;
+    width: 203px;
+    height: 42px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 141.6%;
+    position: absolute;
+    bottom: 71px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card2txtWhatFit {
+    width: 218px;
+    height: 42px;
+    background: #25282A;
+    border-radius: 10px;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 141.6%;
+    position: absolute;
+    bottom: 18px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.whatFitsCardInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 333px;
+    position: relative;
+    margin-top: 43px;
+
+   
+}
+.cardBottomContent{
+    display: none;
+}
+.whatFitsCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.mainContainerWhatFits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 29px;
+}
+
+
+.btnViewAll{
+    font-family: 'Barlow';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+line-height: 141.6%;
+/* identical to box height, or 57px */
+
+text-decoration-line: underline;
+
+color: #25282A;
+
+height: 57px;
+background: none;
+border: none;
+margin-top: 17px;
+
+}
+
+
+@media (min-width:1300px) {
+
+.whatFitsCard
+{
+    width: 1330px;
+}
+    
+}
+@media (max-width:900px) {
+    .paraTxtWeDorWork{
+        text-align: center;
+    }
+    .weDoWorkTxt{
+        text-align: center;
+    }
+}
+@media (max-width:629px) {
+
+    .weDoWorkTxt {
+        padding-top: 30px;
+        font-size: 20px;
+
+    }
+    .paraTxtWeDorWork {
+        font-size: 16px;
+    }
+
+}

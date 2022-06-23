@@ -1,0 +1,231 @@
+.main_signup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+
+    .signup_header {
+        background-color: #25282A;
+        width: -webkit-fill-available;
+        display: flex;
+        justify-content: center;
+        padding: .7rem;
+
+        img {
+            width: 250px;
+        }
+    }
+
+    .signup_card {
+        width: 500px;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: white;
+        box-shadow: rgb(100 116 139 / 6%) 0px 1px 1px, rgb(100 116 139 / 10%) 0px 1px 2px;
+
+        @media(max-width: 450px) {
+            width: 100%;
+        }
+
+
+        .sign_up_title {
+
+            .para_bold {
+                font-size: 25px;
+                font-weight: bold;
+
+                @media(max-width: 450px) {
+                    font-size: 18px;
+
+                }
+            }
+
+            .para_normal {
+                font-size: 18px;
+
+                @media(max-width: 450px) {
+                    font-size: 12px;
+
+                }
+            }
+        }
+
+
+        .main_inputs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+
+            @media(max-width:1250px) {
+                gap: 20px;
+
+            }
+
+            @media(max-width:400px) {}
+
+        }
+
+        .email_input {
+            width: 100%;
+
+
+
+            @media(max-width: 450px) {
+                display: flex;
+                justify-content: end;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .email_title {
+
+                font-family: Barlow;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 141.6%;
+                letter-spacing: 0em;
+
+
+                @media(max-width:450px) {
+                    font-size: 15px;
+
+
+                }
+
+                @media(max-width: 450px) {
+                    width: 96%;
+                }
+
+
+            }
+
+
+            .email {
+                @media(max-width:1250px) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                }
+
+                input {
+                    width: 400px;
+                    height: 45px;
+                    border: 1px solid #7D6666;
+
+                    font-size: 25px;
+                    padding-left: 20px;
+
+                    @media(max-width: 450px) {
+                        width: 90%;
+                    }
+
+                    //    @media(max-width:550px){
+                    //        width: 300px;
+                    //    }
+
+                }
+            }
+        }
+    }
+
+
+
+    .policy {
+
+        padding-top: 35px;
+        line-height: 30px;
+
+        @media(max-width: 450px) {
+            font-size: 12px;
+            padding-left: 5px;
+        }
+
+        .under_line {
+            text-decoration: underline;
+            padding-bottom: 5px;
+            font-weight: 400;
+        }
+    }
+
+    .next_btn {
+        width: 100%;
+        display: flex;
+
+        align-items: flex-start;
+        padding-top: 40px;
+
+        @media(max-width: 450px) {
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 420px;
+            height: 40px;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .4rem;
+
+            @media(max-width: 450px) {
+                width: 96%;
+                font-size: 12px;
+            }
+
+        }
+
+        button::after {
+            content: '>';
+        }
+
+
+    }
+
+    .alreday {
+
+        padding-top: 30px;
+        line-height: 40px;
+
+        @media(max-width: 450px) {
+            font-size: 12px;
+            padding-left: 5px;
+        }
+
+        .under_line {
+            text-decoration: underline;
+            cursor: pointer;
+            color: black;
+
+        }
+
+        .under_line_right {
+            padding-left: 30px;
+            text-decoration: underline;
+
+            @media(max-width: 450px) {
+                padding-left: 10px;
+            }
+        }
+    }
+
+
+
+
+
+}
