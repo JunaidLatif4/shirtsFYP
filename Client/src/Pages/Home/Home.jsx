@@ -1,6 +1,7 @@
 import React from 'react'
 
 import NavBar from "../../Components/Navbar/Navbar"
+import HeroSection from "./Components/DressCodeMen/DressCodeMen"
 import WhatFits from "./Components/WhatFits/WhatFits"
 import WelcomeDC from "./Components/WelcomeDC/WelcomeDC"
 import DressCode from "./Components/DressCodeQuiz/DressCodeQuiz"
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <>
             <NavBar />
+            <HeroSection/>
             <WhatFits />
             <WelcomeDC />
             <DressCode />
