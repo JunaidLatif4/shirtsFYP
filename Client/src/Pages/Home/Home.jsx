@@ -16,6 +16,8 @@ const Home = () => {
             <WelcomeDC />
             <DressCode />
             <Footer />
+            
+            
         </>
     )
 }

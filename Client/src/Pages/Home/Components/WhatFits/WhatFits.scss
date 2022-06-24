@@ -75,10 +75,69 @@ color: #25282A;
     display: none;
 }
 .whatFitsCard{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding-top: 50px;
+    width: 500px;
+    gap: 1.5rem;
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   grid-template-rows: 500px 500px;
 }
+
+
+
+.card{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  position: relative;
+    img{
+        width: 430px;
+        height: 455px;
+        object-fit: cover;
+        object-position: top;
+    }
+    .price{
+        width: 96%;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .price:hover{
+background-color: white;
+border: 1px solid black;
+color: black;
+    }
+   
+    .cart{
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 30px;
+        padding: 10px;
+        border: 1px solid gray;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        transition: .5s;
+        cursor: pointer;
+    }
+
+    .cart:hover{
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+    }
+
+}
+
+
+
 .mainContainerWhatFits{
     display: flex;
     flex-direction: column;
