@@ -54,12 +54,12 @@ const Navbar = () => {
             </NavLink>
             <div className='items'>About us</div>
             <div className='items'>Contact us</div>
-            <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
+            {/* <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
               <div className="items">Pricing</div>
-            </NavLink>
+            </NavLink> */}
 
             <div className="get">
-              <button>Get Started</button>
+              <button>Register</button>
             </div>
 
             <NavLink to='/login' style={{ textDecoration: 'none' }}  >
@@ -93,9 +93,9 @@ const Navbar = () => {
             </NavLink>
             <div className="nav_items">About us</div>
             <div className="nav_items">Contact us</div>
-            <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
+            {/* <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
               <div className="nav_items">Pricing</div>
-            </NavLink>
+            </NavLink> */}
 
 
 
@@ -105,7 +105,7 @@ const Navbar = () => {
           <div className="nav_content_right">
 
             <div className="get">
-              <button>Get Started</button>
+              <button>Register</button>
             </div>
             <NavLink to='/login' style={{ textDecoration: 'none' }}  >
               <div className="sign">

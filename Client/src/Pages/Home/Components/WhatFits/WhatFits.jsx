@@ -61,7 +61,7 @@ const WhatFits = () => {
                     $200
                   </div>
 
-<ShoppingCartIcon className="cart" />
+                  <ShoppingCartIcon className="cart" />
                 </div>
               </>
 

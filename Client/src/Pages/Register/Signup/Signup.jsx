@@ -76,10 +76,10 @@ const register=()=>{
           <div className="alreday">
             Already have an account?{" "}
             <NavLink to='/login' style={{textDecoration:'none'}}>    <sapn className="under_line">Sign In.</sapn></NavLink>  <br />
-            <span className="under_line">
+            {/* <span className="under_line">
               Do not sell my personal information
-            </span>{" "}
-          <span className="under_line_right"> Privacy</span>
+            </span>{" "} */}
+          {/* <span className="under_line_right"> Privacy</span> */}
           </div>
         </div>
       </div>

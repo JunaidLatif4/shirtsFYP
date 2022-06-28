@@ -15,7 +15,7 @@ import women2 from '../../../../Assets/images/images/women 2.jpg'
 
 const DressCodeMen = () => {
 
-  
+
   var settings = {
 
     dots: false,
@@ -74,109 +74,109 @@ const DressCodeMen = () => {
   };
   return (
     <>
-      
+
 
       <div className='pic__container'>
-    
-    <Slider {...settings}>
-   <div>
-   <div className="mainContainerDressCode">
-        <div className="innerContainerDressCode">
-          <div className="dressCodeLeft">
-            <img src={dressCodePic} alt="" className="dressCodeImg" />
-          </div>
 
-          <div className="dressCodeRights">
-            <div className="verticalLine"></div>
-            <div className="topStylishTailTxtBtn">
-              <p className="personalStylingTxt">
-                Personal <span className="spPersonalStyling">Styling</span>,
-                tailored <span className="spPersonalStyling">just</span> for{" "}
-                <span className="spPersonalStyling">you.</span>
-              </p>
+        <Slider {...settings}>
+          <div>
+            <div className="mainContainerDressCode">
+              <div className="innerContainerDressCode">
+                <div className="dressCodeLeft">
+                  <img src={dressCodePic} alt="" className="dressCodeImg" />
+                </div>
 
-              <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
-                Take your style quiz
-              </button>
+                <div className="dressCodeRights">
+                  <div className="verticalLine"></div>
+                  <div className="topStylishTailTxtBtn">
+                    <p className="personalStylingTxt">
+                      Personal <span className="spPersonalStyling">Dressing</span>,
+                      tailored <span className="spPersonalStyling">just</span> for{" "}
+                      <span className="spPersonalStyling">you.</span>
+                    </p>
+
+                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
+                      Take your style quiz
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-   </div>
-   <div>
-   <div className="mainContainerDressCode">
-        <div className="innerContainerDressCode">
-          <div className="dressCodeLeft">
-            <img src={dressCodePic} alt="" className="dressCodeImg" />
-          </div>
+          <div>
+            <div className="mainContainerDressCode">
+              <div className="innerContainerDressCode">
+                <div className="dressCodeLeft">
+                  <img src={dressCodePic} alt="" className="dressCodeImg" />
+                </div>
 
-          <div className="dressCodeRights">
-            <div className="verticalLine"></div>
-            <div className="topStylishTailTxtBtn">
-              <p className="personalStylingTxt">
-                Personal <span className="spPersonalStyling">Styling</span>,
-                tailored <span className="spPersonalStyling">just</span> for{" "}
-                <span className="spPersonalStyling">you.</span>
-              </p>
+                <div className="dressCodeRights">
+                  <div className="verticalLine"></div>
+                  <div className="topStylishTailTxtBtn">
+                    <p className="personalStylingTxt">
+                      Personal <span className="spPersonalStyling">Styling</span>,
+                      tailored <span className="spPersonalStyling">just</span> for{" "}
+                      <span className="spPersonalStyling">you.</span>
+                    </p>
 
-              <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
-                Take your style quiz
-              </button>
+                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
+                      Take your style quiz
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-   </div>
-   <div>
-   <div className="mainContainerDressCode">
-        <div className="innerContainerDressCode">
-          <div className="dressCodeLeft">
-            <img src={dressCodePic} alt="" className="dressCodeImg" />
-          </div>
+          <div>
+            <div className="mainContainerDressCode">
+              <div className="innerContainerDressCode">
+                <div className="dressCodeLeft">
+                  <img src={dressCodePic} alt="" className="dressCodeImg" />
+                </div>
 
-          <div className="dressCodeRights">
-            <div className="verticalLine"></div>
-            <div className="topStylishTailTxtBtn">
-              <p className="personalStylingTxt">
-                Personal <span className="spPersonalStyling">Styling</span>,
-                tailored <span className="spPersonalStyling">just</span> for{" "}
-                <span className="spPersonalStyling">you.</span>
-              </p>
+                <div className="dressCodeRights">
+                  <div className="verticalLine"></div>
+                  <div className="topStylishTailTxtBtn">
+                    <p className="personalStylingTxt">
+                      Personal <span className="spPersonalStyling">Styling</span>,
+                      tailored <span className="spPersonalStyling">just</span> for{" "}
+                      <span className="spPersonalStyling">you.</span>
+                    </p>
 
-              <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
-                Take your style quiz
-              </button>
+                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
+                      Take your style quiz
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-   </div>
-   <div>
-   <div className="mainContainerDressCode">
-        <div className="innerContainerDressCode">
-          <div className="dressCodeLeft">
-            <img src={dressCodePic} alt="" className="dressCodeImg" />
-          </div>
+          <div>
+            <div className="mainContainerDressCode">
+              <div className="innerContainerDressCode">
+                <div className="dressCodeLeft">
+                  <img src={dressCodePic} alt="" className="dressCodeImg" />
+                </div>
 
-          <div className="dressCodeRights">
-            <div className="verticalLine"></div>
-            <div className="topStylishTailTxtBtn">
-              <p className="personalStylingTxt">
-                Personal <span className="spPersonalStyling">Styling</span>,
-                tailored <span className="spPersonalStyling">just</span> for{" "}
-                <span className="spPersonalStyling">you.</span>
-              </p>
+                <div className="dressCodeRights">
+                  <div className="verticalLine"></div>
+                  <div className="topStylishTailTxtBtn">
+                    <p className="personalStylingTxt">
+                      Personal <span className="spPersonalStyling">Styling</span>,
+                      tailored <span className="spPersonalStyling">just</span> for{" "}
+                      <span className="spPersonalStyling">you.</span>
+                    </p>
 
-              <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
-                Take your style quiz
-              </button>
+                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
+                      Take your style quiz
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </Slider>
       </div>
-   </div>
-    </Slider>
-  </div>
 
     </>
   );
