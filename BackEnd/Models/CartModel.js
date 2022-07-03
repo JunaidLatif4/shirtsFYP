@@ -11,16 +11,13 @@ const cartSchema = mongoose.Schema({
             ref: "ProductModel"
         }
     ],
-    address: {
-        type: String
-    },
-    country: {
-        type: String
-    },
     quantity: {
         type: String
     },
     price: {
+        type: String
+    },
+    status: {
         type: String
     }
 

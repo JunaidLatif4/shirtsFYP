@@ -1,16 +1,19 @@
 import React from 'react'
-import './Navbar.scss'
+import { NavLink, useHistory } from 'react-router-dom'
+
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import logo from '../../Assets/images/navlogo.png'
-import { AiOutlineMenu } from 'react-icons/ai';
-import { AiOutlineClose } from 'react-icons/ai';
 import Drawer from '@mui/material/Drawer';
-import { NavLink } from 'react-router-dom'
+import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenu } from 'react-icons/ai';
+
+import logo from '../../Assets/images/navlogo.png'
+
+import './Navbar.scss'
+
+
 const Navbar = () => {
-
-
-
+  let history = useHistory()
 
   const [state, setState] = React.useState({
     top: false,
@@ -40,13 +43,7 @@ const Navbar = () => {
     >
       <>
         <div className="ham_nav_main">
-
-
-
-
           <AiOutlineClose style={{ color: 'white' }} className='icons' onClick={toggleDrawer(anchor, false)} />
-
-
           <div className='navbar__container'>
             <NavLink to='/' style={{ textDecoration: 'none' }}  >
 
@@ -54,34 +51,24 @@ const Navbar = () => {
             </NavLink>
             <div className='items'>About us</div>
             <div className='items'>Contact us</div>
-            {/* <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
-              <div className="items">Pricing</div>
-            </NavLink> */}
-
             <div className="get">
-              <button>Register</button>
+              <button onClick={() => history.push("/signup")}>Register</button>
             </div>
-
             <NavLink to='/login' style={{ textDecoration: 'none' }}  >
               <div className="sign">
                 <button>Sign In</button>
               </div>
-
             </NavLink>
-
           </div>
         </div>
       </>
-
     </Box>
   );
 
   return (
     <>
       <div className='main_nav'>
-
         <div className="nav_main_content">
-
           <div className="nav_content_left">
             <NavLink to='/' style={{ textDecoration: 'none' }}  >
 
@@ -93,51 +80,19 @@ const Navbar = () => {
             </NavLink>
             <div className="nav_items">About us</div>
             <div className="nav_items">Contact us</div>
-            {/* <NavLink to='/Pricing' style={{ textDecoration: 'none' }}  >
-              <div className="nav_items">Pricing</div>
-            </NavLink> */}
-
-
-
-
-
           </div>
           <div className="nav_content_right">
-
             <div className="get">
-              <button>Register</button>
+              <button onClick={() => history.push("/signup")}>Register</button>
             </div>
             <NavLink to='/login' style={{ textDecoration: 'none' }}  >
               <div className="sign">
                 <button>Sign In</button>
               </div>
-
             </NavLink>
-
-
-
           </div>
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
         <div className='ham_nav'>
-
-
-
-
-
-
           {['right'].map((anchor) => (
             <React.Fragment key={anchor}>
               <AiOutlineMenu className='menu' onClick={toggleDrawer(anchor, true)} />
@@ -153,9 +108,6 @@ const Navbar = () => {
         </div>
       </div>
     </>
-
-
-
   );
 }
 

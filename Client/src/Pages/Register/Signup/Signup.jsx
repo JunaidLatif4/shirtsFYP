@@ -1,36 +1,59 @@
 import React, { useState } from "react";
-import {NavLink} from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 
 import logo from "../../../Assets/images/adminlogo.png";
 
+import { toast } from "react-toastify";
+import { RegisterAPI } from "../../../API/Auth";
+
 import "./Signup.scss";
 
+
+
 const Signup = () => {
+  let history = useHistory()
 
-    const [user, setUser]=useState({
-        
-            email:"",
-            role:9,
-            passowrd:""
+  const [enteredData, setEnteredData] = useState({
 
+    email: "",
+    password: ""
+
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEnteredData({
+      ...enteredData,
+      [name]: value
     })
 
-const handleChange=(e)=>{
-    const{name,value}=e.target;
-    setUser({
+  }
 
-        ...user,
-        [name]:value
-        
-
-    })
-
-}
-console.log("password ",user)
-
-const register=()=>{
-
-}
+  const register = async () => {
+    let res = await RegisterAPI(enteredData)
+    if (res.error != null) {
+      toast.error(res.error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      toast('User Registered Success', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      history.push("/login")
+    }
+  }
 
 
   return (
@@ -46,40 +69,31 @@ const register=()=>{
               We'll save your style, fit, and budget preferences.
             </p>
           </div>
-
           <div className="main_inputs">
             <div className="email_input">
               <div className="email_title">Email address</div>
               <div className="email">
-                <input type="text" value={user.email} name="email" onChange={handleChange} />
-                {console.log("user",user)}
+                <input type="text" value={enteredData.email} name="email" onChange={handleChange} />
               </div>
             </div>
             <div className="email_input">
               <div className="email_title">Create Password</div>
               <div className="email">
-                <input type="password" value={user.passowrd} name="passowrd" onChange={handleChange}/>
+                <input type="password" value={enteredData.password} name="password" onChange={handleChange} />
               </div>
             </div>
           </div>
           <div className="policy">
-            By creating an account, you agree to our{" "}
+            By creating an account, you agree to our
             <span className="under_line">Privacy Policy</span> and <br />
             <span className="under_line">Terms & Conditions.</span>
           </div>
-          {/* <input type="file" id="img" name="profile" accept="image/*" value={user.profile}  onChange={handleChange} /> */}
           <div className="next_btn">
             <button onClick={register}>Sign up </button>
           </div>
-
-         
           <div className="alreday">
-            Already have an account?{" "}
-            <NavLink to='/login' style={{textDecoration:'none'}}>    <sapn className="under_line">Sign In.</sapn></NavLink>  <br />
-            {/* <span className="under_line">
-              Do not sell my personal information
-            </span>{" "} */}
-          {/* <span className="under_line_right"> Privacy</span> */}
+            Already have an account?
+            <NavLink to='/login' style={{ textDecoration: 'none' }}>    <sapn className="under_line">Sign In.</sapn></NavLink>  <br />
           </div>
         </div>
       </div>

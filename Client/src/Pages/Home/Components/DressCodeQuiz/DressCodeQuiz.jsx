@@ -21,7 +21,7 @@ const DressCodeQuiz = () => {
             <img src={pic} alt="" className="dressCodeQuizImg" />
           </div>
 
-          <button className='takeQuizDCBtn' onClick={navigateClicked} >Take your style quiz</button>
+          {/* <button className='takeQuizDCBtn' onClick={navigateClicked} >Take your style quiz</button> */}
 
         </div></div>
     </>

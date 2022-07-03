@@ -1,23 +1,51 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 import logo from "../../../Assets/images/adminlogo.png";
+
+import { toast } from "react-toastify";
+import { LoginAPI } from "../../../API/Auth";
+
 
 import "./Userlogin.scss";
 
 
 const Userlogin = () => {
+let history = useHistory()
 
-  const [userCred, setUserCred] = useState({
+  const [enteredData, setEnteredData] = useState({
     email: "",
     password: "",
   });
 
   const handelChange = (e) => {
-    setUserCred({ ...userCred, [e.target.name]: e.target.value });
+    setEnteredData({ ...enteredData, [e.target.name]: e.target.value });
   };
 
-  const handelSubmit = (e) => {
+  const handelSubmit = async () => {
+    let res = await LoginAPI(enteredData)
+    if (res.error != null) {
+      toast.error(res.error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      toast('Login Success', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      history.push("/")
+    }
   };
 
 
@@ -39,7 +67,7 @@ const Userlogin = () => {
               <input
                 type="text"
                 name="email"
-                value={userCred.email}
+                value={enteredData.email}
                 onChange={(e) => handelChange(e)}
               />
             </div>
@@ -50,25 +78,17 @@ const Userlogin = () => {
               <input
                 type="text"
                 name="password"
-                value={userCred.password}
+                value={enteredData.password}
                 onChange={(e) => handelChange(e)}
               />
             </div>
           </div>
         </div>
       </div>
-
-      {/* <NavLink to="/UsersupportPage" style={{ textDecoration: "none" }}> */}
       <div className="login_btn">
-        <NavLink to='/UsersupportPage' style={{ textDecoration: 'none' }}>
-
-          <button onClick={(e) => handelSubmit(e)}>Log In</button>
-        </NavLink>
+          <button onClick={handelSubmit}>Log In</button>
       </div>
-      {/* </NavLink> */}
-
       <div className="or">OR</div>
-
       <div className="dont_main">
         <div className="dont">
           Don't have an account?

@@ -1,28 +1,29 @@
-.weDoWorkTxt{
+.weDoWorkTxt {
     font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 141.6%;
-/* identical to box height, or 85px */
-margin-top: 15px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 141.6%;
+    /* identical to box height, or 85px */
+    margin-top: 15px;
 
-margin-bottom: 0px;
-color: #25282A;
+    margin-bottom: 0px;
+    color: #25282A;
 
 }
-.paraTxtWeDorWork{
+
+.paraTxtWeDorWork {
     font-family: 'Barlow';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-margin-bottom: 0px;
-line-height: 141.6%;
-/* or 42px */
-margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 0px;
+    line-height: 141.6%;
+    /* or 42px */
+    margin-top: 0px;
 
 
-color: #25282A;
+    color: #25282A;
 
 
 }
@@ -44,6 +45,7 @@ color: #25282A;
     justify-content: center;
     align-items: center;
 }
+
 .card2txtWhatFit {
     width: 218px;
     height: 42px;
@@ -61,7 +63,8 @@ color: #25282A;
     justify-content: center;
     align-items: center;
 }
-.whatFitsCardInner{
+
+.whatFitsCardInner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,37 +72,45 @@ color: #25282A;
     position: relative;
     margin-top: 43px;
 
-   
+
 }
-.cardBottomContent{
+
+.cardBottomContent {
     display: none;
 }
-.whatFitsCard{
+
+.whatFitsCard {
     padding-top: 50px;
     width: 500px;
     gap: 1.5rem;
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
-   grid-template-rows: 500px 500px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 450px 450px;
 }
 
 
 
-.card{
+.card_box {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  position: relative;
-    img{
-        width: 430px;
-        height: 455px;
+    position: relative;
+
+    img {
+        // width: 430px;
+        // height: 455px;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        object-position: top;
     }
-    .price{
-        width: 96%;
+
+    .price {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
         background-color: #25282A;
         color: white;
         font-size: 20px;
@@ -109,26 +120,27 @@ color: #25282A;
         cursor: pointer;
     }
 
-    .price:hover{
-background-color: white;
-border: 1px solid #25282A;
-color: #25282A;
+    .price:hover {
+        background-color: white;
+        border: 1px solid #25282A;
+        color: #25282A;
     }
-   
-    .cart{
+
+    .cart {
         position: absolute;
-        top: 0;
+        top: 20px;
         right: 0;
         font-size: 30px;
-        padding: 10px;
-        border: 1px solid gray;
-        border-radius: 50%;
+        padding: 7px 10px;
+        border: 1px 0px 1px 1px solid gray;
+        border-radius: 10px 0px 0px 10px;
         background-color: #FFFFFF;
         transition: .5s;
         cursor: pointer;
+        font-size: 1.5rem;
     }
 
-    .cart:hover{
+    .cart:hover {
         background-color: #25282A;
         color: white;
         border: 1px solid #25282A;
@@ -138,7 +150,7 @@ color: #25282A;
 
 
 
-.mainContainerWhatFits{
+.mainContainerWhatFits {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,42 +158,44 @@ color: #25282A;
 }
 
 
-.btnViewAll{
+.btnViewAll {
     font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 17px;
-line-height: 141.6%;
-/* identical to box height, or 57px */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 141.6%;
+    /* identical to box height, or 57px */
 
-text-decoration-line: underline;
+    text-decoration-line: underline;
 
-color: #25282A;
+    color: #25282A;
 
-height: 57px;
-background: none;
-border: none;
-margin-top: 17px;
+    height: 57px;
+    background: none;
+    border: none;
+    margin-top: 17px;
 
 }
 
 
 @media (min-width:1300px) {
 
-.whatFitsCard
-{
-    width: 1330px;
+    .whatFitsCard {
+        width: 1330px;
+    }
+
 }
-    
-}
+
 @media (max-width:900px) {
-    .paraTxtWeDorWork{
+    .paraTxtWeDorWork {
         text-align: center;
     }
-    .weDoWorkTxt{
+
+    .weDoWorkTxt {
         text-align: center;
     }
 }
+
 @media (max-width:629px) {
 
     .weDoWorkTxt {
@@ -189,6 +203,7 @@ margin-top: 17px;
         font-size: 20px;
 
     }
+
     .paraTxtWeDorWork {
         font-size: 16px;
     }

@@ -54,17 +54,14 @@ const WhatFits = () => {
           {data.map((e) => {
             return (
               <>
-                <div className="card">
-
+                <div className="card_box">
                   <img src={e.img} />
                   <div className="price">
                     $200
                   </div>
-
                   <ShoppingCartIcon className="cart" />
                 </div>
               </>
-
             )
           })}
         </div>

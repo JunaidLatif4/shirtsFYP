@@ -5,10 +5,12 @@ const productSchema = mongoose.Schema({
         type: String
     },
     category: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"CategoryModel"
     },
     brand: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"BrandModel"
     },
     price: {
         type: String
