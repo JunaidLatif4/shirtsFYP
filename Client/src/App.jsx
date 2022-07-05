@@ -1,17 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import Home from "./Pages/Home/Home"
 import Login from "./Pages/Register/Userlogin/Userlogin"
 import SignUp from "./Pages/Register/Signup/Signup"
 
-import { ToastContainer } from "react-toastify"
+import { useDispatch } from 'react-redux'
+import { addProductData } from "./GlobalStore/actions/addProducts"
+
+import { ToastContainer, toast } from "react-toastify"
+import { GettingProductsAPI } from './API/Products'
+
 
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const App = () => {
+    let dispatch = useDispatch()
+
+    let gettingProducts = async () => {
+        let res = await GettingProductsAPI()
+        if (res.error != null) {
+            toast.error(res.error, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } else {
+            dispatch(addProductData(res.data.data))
+        }
+    }
+
+    useEffect(() => {
+        gettingProducts()
+    }, [])
+
     return (
         <>
             <ToastContainer

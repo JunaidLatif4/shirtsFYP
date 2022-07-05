@@ -7,6 +7,7 @@ import WelcomeDC from "./Components/WelcomeDC/WelcomeDC"
 import DressCode from "./Components/DressCodeQuiz/DressCodeQuiz"
 import Footer from "../../Components/Footer/Footer"
 import { useSelector } from 'react-redux'
+import Cart from '../Cart/Cart'
 
 const Home = () => {
 
@@ -15,10 +16,14 @@ const Home = () => {
     return (
         <>
             <NavBar />
-            <HeroSection />
-            <WhatFits products={productsData} />
+            {/* <HeroSection />
+            {
+                productsData &&
+                <WhatFits products={productsData} />
+            }
             <WelcomeDC />
-            <DressCode />
+            <DressCode /> */}
+            <Cart/>
             <Footer />
         </>
     )

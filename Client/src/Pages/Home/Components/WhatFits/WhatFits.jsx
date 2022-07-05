@@ -51,13 +51,14 @@ const WhatFits = (props) => {
           quiz, requests and feedback.
         </p>
         <div className="whatFitsCard">
-          {props.products.map((e) => {
+          {props.products.map((data, index) => {
             return (
+              index <= 5 &&
               <>
                 <div className="card_box">
-                  <img src={e.img} />
+                  <img src={data.img.public} />
                   <div className="price">
-                    $200
+                    {data.price}
                   </div>
                   <ShoppingCartIcon className="cart" />
                 </div>

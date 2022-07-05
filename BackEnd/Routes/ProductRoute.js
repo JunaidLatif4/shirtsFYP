@@ -16,6 +16,7 @@ Router.get("/", async (req, res) => {
     try {
         if (id) {
             const product = await ProductModel.findById(id)
+                .populate("category").populate("brand")
             if (product) {
                 res.status(200).json({
                     message: "Product Found Success",
@@ -28,6 +29,7 @@ Router.get("/", async (req, res) => {
             }
         } else {
             const products = await ProductModel.find()
+            .populate("category").populate("brand")
             if (products) {
                 res.status(200).json({
                     message: "All Products Found Success",
