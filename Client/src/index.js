@@ -4,12 +4,17 @@ import { BrowserRouter } from "react-router-dom"
 
 import App from "./App";
 
+import { Provider } from "react-redux"
+import GlobalState from "./GlobalStae"
+
 import "./index.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-        <App />
+    <Provider store={GlobalState} >
+      <App />
+    </Provider>
   </BrowserRouter>
 );

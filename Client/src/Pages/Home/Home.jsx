@@ -6,13 +6,17 @@ import WhatFits from "./Components/WhatFits/WhatFits"
 import WelcomeDC from "./Components/WelcomeDC/WelcomeDC"
 import DressCode from "./Components/DressCodeQuiz/DressCodeQuiz"
 import Footer from "../../Components/Footer/Footer"
+import { useSelector } from 'react-redux'
 
 const Home = () => {
+
+    let productsData = useSelector((state) => state.productsData)
+
     return (
         <>
             <NavBar />
-            <HeroSection/>
-            <WhatFits />
+            <HeroSection />
+            <WhatFits products={productsData} />
             <WelcomeDC />
             <DressCode />
             <Footer />
