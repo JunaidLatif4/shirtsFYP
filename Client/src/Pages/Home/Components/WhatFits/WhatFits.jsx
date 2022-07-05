@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import pic1 from "../../../../Assets/images/weWorkPic2.png";
 import pic2 from "../../../../Assets/images/weWorkPic1.png";
 import shirt from "../../../../Assets/images/shirt.webp";
-const WhatFits = () => {
+const WhatFits = (props) => {
 
   const data = [
     {
@@ -51,7 +51,7 @@ const WhatFits = () => {
           quiz, requests and feedback.
         </p>
         <div className="whatFitsCard">
-          {data.map((e) => {
+          {props.products.map((e) => {
             return (
               <>
                 <div className="card_box">
