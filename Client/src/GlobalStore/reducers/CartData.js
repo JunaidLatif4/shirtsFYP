@@ -21,8 +21,8 @@ const cartData = (state = initialState, action) => {
             break;
         case "REMOVE_FROM_CART":
             let data1 = action.data
-            let productId1 = data._id
-            let findProduct1 = state.find(val => val._id == productId)
+            let productId1 = data1._id
+            let findProduct1 = state.find(val => val._id == productId1)
             if (findProduct1) {
                 let countQty = state.filter(val => val._id == productId1)
                 if (countQty[0].qty <= 1) {

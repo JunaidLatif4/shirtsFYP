@@ -130,7 +130,7 @@ const Navbar = () => {
                     {
                       cartData && cartData.length >= 1 &&
                       <div className="count">
-                        {cartData.length + 1}
+                        {cartData.length}
                       </div>
                     }
                     <FaShoppingCart />

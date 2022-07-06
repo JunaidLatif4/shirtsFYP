@@ -95,9 +95,9 @@ const DressCodeMen = () => {
                       <span className="spPersonalStyling">you.</span>
                     </p>
 
-                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
+                    {/* <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
                       Take your style quiz
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

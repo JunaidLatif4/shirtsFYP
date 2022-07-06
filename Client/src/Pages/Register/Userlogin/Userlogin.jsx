@@ -79,7 +79,7 @@ const Userlogin = () => {
             <div className="email_title">Password *</div>
             <div className="email">
               <input
-                type="text"
+                type="password"
                 name="password"
                 value={enteredData.password}
                 onChange={(e) => handelChange(e)}
