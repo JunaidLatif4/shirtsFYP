@@ -11,7 +11,7 @@ import "./Userlogin.scss";
 
 
 const Userlogin = () => {
-let history = useHistory()
+  let history = useHistory()
 
   const [enteredData, setEnteredData] = useState({
     email: "",
@@ -44,7 +44,10 @@ let history = useHistory()
         draggable: true,
         progress: undefined,
       });
-      history.push("/")
+      localStorage.setItem("userData", JSON.stringify(res.data.data))
+      setTimeout(() => {
+        history.push("/")
+      }, 1500);
     }
   };
 
@@ -86,7 +89,7 @@ let history = useHistory()
         </div>
       </div>
       <div className="login_btn">
-          <button onClick={handelSubmit}>Log In</button>
+        <button onClick={handelSubmit}>Log In</button>
       </div>
       <div className="or">OR</div>
       <div className="dont_main">

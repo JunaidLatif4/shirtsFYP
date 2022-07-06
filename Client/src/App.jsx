@@ -7,6 +7,7 @@ import SignUp from "./Pages/Register/Signup/Signup"
 
 import { useDispatch } from 'react-redux'
 import { addProductData } from "./GlobalStore/actions/addProducts"
+import { addUserData } from './GlobalStore/actions/addUserData'
 
 import { ToastContainer, toast } from "react-toastify"
 import { GettingProductsAPI } from './API/Products'
@@ -36,6 +37,7 @@ const App = () => {
         }
     }
 
+   
     useEffect(() => {
         gettingProducts()
     }, [])

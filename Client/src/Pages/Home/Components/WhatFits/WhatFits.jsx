@@ -1,46 +1,25 @@
 import React from "react";
-import "./WhatFits.scss";
+
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import pic1 from "../../../../Assets/images/weWorkPic2.png";
 import pic2 from "../../../../Assets/images/weWorkPic1.png";
 import shirt from "../../../../Assets/images/shirt.webp";
+
+import { useDispatch, useSelector } from "react-redux";
+import { addToCartData } from "../../../../GlobalStore/actions/addToCart";
+
+import "./WhatFits.scss";
+
+
+
 const WhatFits = (props) => {
+  let dispatch = useDispatch()
 
-  const data = [
-    {
-      img: shirt,
-      flag: true
+  let cartData = useSelector((state) => state.cartData)
 
-    },
-    {
-      img: shirt,
-      para1: "Just-right jeans? Easy.",
-      para2: "Jeans from $65 to $199",
-      flag: false
-    },
-
-    {
-      img: shirt,
-      flag: true
-
-    },
-    {
-      img: shirt,
-      flag: true
-
-    },
-    {
-      img: shirt,
-      flag: true
-
-    },
-    {
-      img: shirt,
-      flag: true
-
-    },
-
-  ]
+  const addToCart = (data) => {
+    dispatch(addToCartData(data))
+  }
 
   return (
     <>
@@ -52,6 +31,8 @@ const WhatFits = (props) => {
         </p>
         <div className="whatFitsCard">
           {props.products.map((data, index) => {
+            var findItem = cartData.filter((val) => val._id == data._id)
+            console.log("-------------", findItem);
             return (
               index <= 5 &&
               <>
@@ -60,7 +41,17 @@ const WhatFits = (props) => {
                   <div className="price">
                     {data.price}
                   </div>
-                  <ShoppingCartIcon className="cart" />
+                  <div className="cart" onClick={() => addToCart(data)}>
+                    <div className="cart_icon">
+                      <ShoppingCartIcon />
+                      {
+                        findItem && findItem.length >= 1 &&
+                        <div className="count">
+                          {findItem[0].qty}
+                        </div>
+                      }
+                    </div>
+                  </div>
                 </div>
               </>
             )

@@ -1,9 +1,21 @@
 import React from 'react'
 
+import { useSelector, useDispatch } from "react-redux"
+import { addToCartData ,removeFromCartData } from "../../GlobalStore/actions/addToCart"
 
 import './Cart.scss'
 
 const Cart = () => {
+    let dispatch = useDispatch()
+
+    const cartData = useSelector((state) => state.cartData)
+
+    const addToCart = (data) => {
+        dispatch(addToCartData(data))
+    }
+    const removeFromCart = (data) => {
+        dispatch(removeFromCartData(data))
+    }
 
     return (
         <>
@@ -22,31 +34,40 @@ const Cart = () => {
                             <div class="col end">Total</div>
                         </div>
 
-                        <div class="layout-inline row">
+                        {
+                            cartData && cartData.length >= 1 && cartData.map((data) => {
+                                return (
+                                    <>
+                                        <div class="layout-inline row">
 
-                            <div class="col col-pro layout-inline">
-                                <img src="http://static.ddmcdn.com/gif/10-kitten-cuteness-1.jpg" alt="kitten" />
-                                <p>Happy Little Critter</p>
-                            </div>
+                                            <div class="col col-pro layout-inline">
+                                                <img src={data.img.public} alt="kitten" />
+                                                <p>{data.title}</p>
+                                            </div>
 
-                            <div class="col col-price col-numeric align-center ">
-                                <p>£59.99</p>
-                            </div>
+                                            <div class="col col-price col-numeric align-center ">
+                                                <p>${data.price}</p>
+                                            </div>
 
-                            <div class="col col-qty layout-inline">
-                                <a href="#" class="qty qty-minus">-</a>
-                                <input type="numeric" value="3" />
-                                <a href="#" class="qty qty-plus">+</a>
-                            </div>
+                                            <div class="col col-qty layout-inline">
+                                                <div onClick={() => removeFromCart(data)} class="qty qty-minus">-</div>
+                                                <input type="numeric" value={data.qty} />
+                                                <div onClick={() => addToCart(data)} class="qty qty-plus">+</div>
+                                            </div>
 
-                            <div class="col col-vat col-numeric end">
-                                <p>£2.95</p>
-                            </div>
-                            <div class="col col-total col-numeric">               <p> £182.95</p>
-                            </div>
-                        </div>
+                                            <div class="col col-vat col-numeric end">
+                                                <p>${data.price * data.qty}</p>
+                                            </div>
+                                        </div>
+                                    </>
+                                )
+                            })
 
-                        <div class="layout-inline row row-bg2">
+                        }
+
+
+
+                        {/* <div class="layout-inline row row-bg2">
 
                             <div class="col col-pro layout-inline">
                                 <img src="http://lovemeow.com/wp-content/uploads/2012/05/kitten81.jpg" alt="kitten" />
@@ -95,7 +116,7 @@ const Cart = () => {
                             <div class="col col-total col-numeric">
                                 <p>£182.95</p>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div class="tf">
                             <div class="row layout-inline">

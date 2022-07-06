@@ -38,11 +38,11 @@
 
     .container {
         width: -webkit-fill-available;
-        margin: 1rem;
+        // margin: 1rem;
         overflow: hidden;
         position: relative;
 
-        border-radius: 0.6em;
+        // border-radius: 0.6em;
         background: #ecf0f1;
         box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
     }
@@ -56,7 +56,7 @@
     }
 
     .cart {
-        margin: 2.5em;
+        // margin: 2.5em;
         overflow: hidden;
     }
 
@@ -67,7 +67,7 @@
 
     .table {
         background: #ffffff;
-        border-radius: 7px;
+        // border-radius: 7px;
         overflow: hidden;
         clear: both;
         margin-bottom: 2rem;
@@ -150,7 +150,7 @@
     }
 
 
-    a.qty {
+    .qty {
         width: 30px;
         height: 30px;
         display: inline-flex;
@@ -163,9 +163,10 @@
         background: #43ace3;
         color: #fff;
         padding-top: -10px;
+        cursor: pointer;
     }
 
-    a.qty:hover {
+    .qty:hover {
         background: #3b9ac6;
     }
 
