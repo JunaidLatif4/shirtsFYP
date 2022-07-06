@@ -1,9 +1,6 @@
 import React from "react";
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import pic1 from "../../../../Assets/images/weWorkPic2.png";
-import pic2 from "../../../../Assets/images/weWorkPic1.png";
-import shirt from "../../../../Assets/images/shirt.webp";
 
 import { useDispatch, useSelector } from "react-redux";
 import { addToCartData } from "../../../../GlobalStore/actions/addToCart";

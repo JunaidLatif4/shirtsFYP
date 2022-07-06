@@ -1,254 +1,257 @@
-.weDoWorkTxt {
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 141.6%;
-    /* identical to box height, or 85px */
-    margin-top: 15px;
-
-    margin-bottom: 0px;
-    color: #25282A;
-
-}
-
-.paraTxtWeDorWork {
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 0px;
-    line-height: 141.6%;
-    /* or 42px */
-    margin-top: 0px;
-
-
-    color: #25282A;
-
-
-}
-
-.card1txtWhatFit {
-    background: #25282A;
-    border-radius: 10px;
-    width: 203px;
-    height: 42px;
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 141.6%;
-    position: absolute;
-    bottom: 71px;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card2txtWhatFit {
-    width: 218px;
-    height: 42px;
-    background: #25282A;
-    border-radius: 10px;
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 141.6%;
-    position: absolute;
-    bottom: 18px;
-    color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.whatFitsCardInner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 333px;
-    position: relative;
-    margin-top: 43px;
-
-
-}
-
-.cardBottomContent {
-    display: none;
-}
-
-.whatFitsCard {
-    padding-top: 50px;
-    width: 1200px;
-    gap: 1.5rem;
-    margin: 0 2rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 450px 450px;
-
-    @media only screen and (max-width:1250px) {
-        width: 800px;
-        grid-template-rows: 400px 400px 400px;
-    }
-
-    @media only screen and (max-width:850px) {
-        width: -webkit-fill-available;
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-    @media only screen and (max-width:500px) {
-        display: flex;
-        flex-direction: column;
-
-    }
-}
-
-
-
-.card_box {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-
-    img {
-        // width: 430px;
-        // height: 455px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .price {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #25282A;
-        color: white;
-        font-size: 20px;
-        padding: 10px;
-        text-align: center;
-        transition: .5s;
-        cursor: pointer;
-    }
-
-    .price:hover {
-        background-color: white;
-        border: 1px solid #25282A;
-        color: #25282A;
-    }
-
-    .cart {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        font-size: 30px;
-        padding: 5px 10px;
-        border: 1px 0px 1px 1px solid gray;
-        border-radius: 10px 0px 0px 10px;
-        background-color: #FFFFFF;
-        transition: .5s;
-        cursor: pointer;
-        font-size: 1.5rem;
-
-        .cart_icon{
-            position: relative;
-
-            .count{
-                position: absolute;
-                width: 15px;
-                height: 15px;
-                background-color: #25282A;
-                border-radius: 50rem;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: .6rem;
-                color: white;
-                top: -5px;
-                left: -10px;
-            }
-        }
-    }
-
-    .cart:hover {
-        background-color: #25282A;
-        color: white;
-        border: 1px solid #25282A;
-        .cart_icon{
-            .count{
-                background-color: white;
-                color: #25282A;
-            }
-        }
-    }
-
-}
-
-
-
 .mainContainerWhatFits {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 29px;
-}
 
+    .weDoWorkTxt {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 141.6%;
+        /* identical to box height, or 85px */
+        margin-top: 15px;
 
-.btnViewAll {
-    font-family: 'Barlow';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 141.6%;
-    /* identical to box height, or 57px */
+        margin-bottom: 0px;
+        color: #25282A;
 
-    text-decoration-line: underline;
+    }
 
-    color: #25282A;
-
-    height: 57px;
-    background: none;
-    border: none;
-    margin-top: 17px;
-
-}
-
-
-// @media (min-width:1300px) {
-
-//     .whatFitsCard {
-//         width: 1330px;
-//     }
-
-// }
-
-@media (max-width:900px) {
     .paraTxtWeDorWork {
-        text-align: center;
-    }
-
-    .weDoWorkTxt {
-        text-align: center;
-    }
-}
-
-@media (max-width:629px) {
-
-    .weDoWorkTxt {
-        padding-top: 30px;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 500;
         font-size: 20px;
+        margin-bottom: 0px;
+        line-height: 141.6%;
+        /* or 42px */
+        margin-top: 0px;
+
+
+        color: #25282A;
+
 
     }
 
-    .paraTxtWeDorWork {
-        font-size: 16px;
+    .card1txtWhatFit {
+        background: #25282A;
+        border-radius: 10px;
+        width: 203px;
+        height: 42px;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 141.6%;
+        position: absolute;
+        bottom: 71px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card2txtWhatFit {
+        width: 218px;
+        height: 42px;
+        background: #25282A;
+        border-radius: 10px;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 141.6%;
+        position: absolute;
+        bottom: 18px;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .whatFitsCardInner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 333px;
+        position: relative;
+        margin-top: 43px;
+
+
+    }
+
+    .cardBottomContent {
+        display: none;
+    }
+
+    .whatFitsCard {
+        padding-top: 50px;
+        width: 1200px;
+        gap: 1.5rem;
+        margin: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 450px 450px;
+
+        @media only screen and (max-width:1250px) {
+            width: 800px;
+            grid-template-rows: 400px 400px 400px;
+        }
+
+        @media only screen and (max-width:850px) {
+            width: -webkit-fill-available;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        @media only screen and (max-width:500px) {
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+
+
+    .card_box {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            // width: 430px;
+            // height: 455px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .price {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #25282A;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            text-align: center;
+            transition: .5s;
+            cursor: pointer;
+        }
+
+        .price:hover {
+            background-color: white;
+            border: 1px solid #25282A;
+            color: #25282A;
+        }
+
+        .cart {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            font-size: 30px;
+            padding: 5px 10px;
+            border: 1px 0px 1px 1px solid gray;
+            border-radius: 10px 0px 0px 10px;
+            background-color: #FFFFFF;
+            transition: .5s;
+            cursor: pointer;
+            font-size: 1.5rem;
+
+            .cart_icon {
+                position: relative;
+
+                .count {
+                    position: absolute;
+                    width: 15px;
+                    height: 15px;
+                    background-color: #25282A;
+                    border-radius: 50rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: .6rem;
+                    color: white;
+                    top: -5px;
+                    left: -10px;
+                }
+            }
+        }
+
+        .cart:hover {
+            background-color: #25282A;
+            color: white;
+            border: 1px solid #25282A;
+
+            .cart_icon {
+                .count {
+                    background-color: white;
+                    color: #25282A;
+                }
+            }
+        }
+
+    }
+
+
+
+
+
+    .btnViewAll {
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 141.6%;
+        /* identical to box height, or 57px */
+
+        text-decoration-line: underline;
+
+        color: #25282A;
+
+        height: 57px;
+        background: none;
+        border: none;
+        margin-top: 17px;
+
+    }
+
+
+    // @media (min-width:1300px) {
+
+    //     .whatFitsCard {
+    //         width: 1330px;
+    //     }
+
+    // }
+
+    @media (max-width:900px) {
+        .paraTxtWeDorWork {
+            text-align: center;
+        }
+
+        .weDoWorkTxt {
+            text-align: center;
+        }
+    }
+
+    @media (max-width:629px) {
+
+        .weDoWorkTxt {
+            padding-top: 30px;
+            font-size: 20px;
+
+        }
+
+        .paraTxtWeDorWork {
+            font-size: 16px;
+        }
+
     }
 
 }
