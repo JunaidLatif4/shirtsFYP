@@ -1,5 +1,6 @@
 const Router = require("express").Router()
 const mongoose = require("mongoose")
+const stripe = require('stripe')("sk_test_51LItchLoNvDBf5Y4aq5egMAyOmqroc8UBBrsZLFXEh8sIJpmX2pU0tFz8HOrwRLH7U7GZmqe18bdcOmbjFRv525p00WPK5lfhi")
 
 const PaymentsModel = require("../Models/PaymentsModel")
 
@@ -46,12 +47,16 @@ Router.post("/", async (req, res) => {
     const { id, country } = req.query
 
     try {
-        const paymentData = await PaymentsModel.create(req.body)
-        await paymentData.save()
-        res.status(200).json({
-            message: "Payment Create Success",
-            data: paymentData
-        })
+        const paymentIntent = await stripe.paymentIntents.create({
+            currency: 'USD',
+            amount: 1999,
+            automatic_payment_methods: { enabled: true }
+        });
+
+        // Send publishable key and PaymentIntent details to client
+        res.send({
+            clientSecret: paymentIntent.client_secret,
+        });
     } catch (error) {
         console.log(error);
         res.status(500).json({

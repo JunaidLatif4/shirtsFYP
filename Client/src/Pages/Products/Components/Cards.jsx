@@ -14,13 +14,18 @@ const Cards = (props) => {
 
     let productsData = useSelector((state) => state.productsData)
     let cartData = useSelector((state) => state.cartData)
+    let userData = useSelector((state) => state.userData)
 
     const [products, setProducts] = useState(null)
     const [category, setCategory] = useState("all")
 
 
     const addToCart = (data) => {
-        dispatch(addToCartData(data))
+        if (userData) {
+            dispatch(addToCartData(data))
+        } else {
+            alert("Please Login to continue")
+        }
     }
 
     const sortProds = async () => {

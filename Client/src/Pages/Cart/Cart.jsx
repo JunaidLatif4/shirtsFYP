@@ -1,20 +1,52 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
+import { Button } from "@mui/material"
 
 import { useSelector, useDispatch } from "react-redux"
-import { addToCartData ,removeFromCartData } from "../../GlobalStore/actions/addToCart"
+import { addToCartData, removeFromCartData } from "../../GlobalStore/actions/addToCart"
+
+import Payment from "../Payment/Payment"
 
 import './Cart.scss'
 
 const Cart = () => {
+    let history = useHistory()
     let dispatch = useDispatch()
 
     const cartData = useSelector((state) => state.cartData)
+
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const addToCart = (data) => {
         dispatch(addToCartData(data))
     }
     const removeFromCart = (data) => {
         dispatch(removeFromCartData(data))
+    }
+
+    const calculatingAmount = async () => {
+        let singleAmounts = []
+        let amount = 0
+        let process = cartData.map((data) => {
+            singleAmounts.push(data.price * data.qty)
+        })
+        await Promise.all(process)
+        let process2 = singleAmounts.map((val) => {
+            amount = amount + val
+        })
+        await Promise.all(process2)
+        setTotalPrice(amount)
+    }
+
+    useEffect(() => {
+        if (cartData && cartData.length >= 1) {
+            calculatingAmount()
+        }
+    }, [cartData])
+
+    const goToCheckOut = () => {
+        history.push("/payment")
     }
 
     return (
@@ -27,11 +59,12 @@ const Cart = () => {
 
                         <div class="layout-inline row th">
                             <div class="col col-pro">Product</div>
-                            <div class="col col-price align-center ">
+                            <div class="col col-Price align-center">Size</div>
+                            <div class="col col-price align-center">
                                 Price
                             </div>
                             <div class="col col-qty align-center">QTY</div>
-                            <div class="col end">Total</div>
+                            <div class="col end align-center">Total</div>
                         </div>
 
                         {
@@ -46,6 +79,13 @@ const Cart = () => {
                                             </div>
 
                                             <div class="col col-price col-numeric align-center ">
+                                                <select name="" id="">
+                                                    <option value="S">Small</option>
+                                                    <option value="M">Medium</option>
+                                                    <option value="L">Large</option>
+                                                </select>
+                                            </div>
+                                            <div class="col col-price col-numeric align-center ">
                                                 <p>${data.price}</p>
                                             </div>
 
@@ -55,7 +95,7 @@ const Cart = () => {
                                                 <div onClick={() => addToCart(data)} class="qty qty-plus">+</div>
                                             </div>
 
-                                            <div class="col col-vat col-numeric end">
+                                            <div class="col col-vat col-numeric end align-center">
                                                 <p>${data.price * data.qty}</p>
                                             </div>
                                         </div>
@@ -65,80 +105,18 @@ const Cart = () => {
 
                         }
 
-
-
-                        {/* <div class="layout-inline row row-bg2">
-
-                            <div class="col col-pro layout-inline">
-                                <img src="http://lovemeow.com/wp-content/uploads/2012/05/kitten81.jpg" alt="kitten" />
-                                <p>Scared Little Kittie</p>
-                            </div>
-
-                            <div class="col col-price col-numeric align-center ">
-                                <p>£23.99</p>
-                            </div>
-
-                            <div class="col col-qty  layout-inline">
-                                <a href="#" class="qty qty-minus ">-</a>
-                                <input type="numeric" value="1" />
-                                <a href="#" class="qty qty-plus">+</a>
-                            </div>
-
-                            <div class="col col-vat col-numeric">
-                                <p>£1.95</p>
-                            </div>
-                            <div class="col col-total col-numeric">
-                                <p>£25.94</p>
-                            </div>
-
-                        </div>
-
-                        <div class="layout-inline row">
-
-                            <div class="col col-pro layout-inline">
-                                <img src="http://cdn.cutestpaw.com/wp-content/uploads/2012/04/l-my-first-kitten.jpg" alt="kitten" />
-                                <p>Curious Little Begger</p>
-                            </div>
-
-                            <div class="col col-price col-numeric align-center ">
-                                <p>£59.99</p>
-                            </div>
-
-                            <div class="col col-qty layout-inline">
-                                <a href="#" class="qty qty-minus">-</a>
-                                <input type="numeric" value="3" />
-                                <a href="#" class="qty qty-plus">+</a>
-                            </div>
-
-                            <div class="col col-vat col-numeric">
-                                <p>£2.95</p>
-                            </div>
-                            <div class="col col-total col-numeric">
-                                <p>£182.95</p>
-                            </div>
-                        </div> */}
-
                         <div class="tf">
                             <div class="row layout-inline">
-                                <div class="col">
+                                <div class="col align-center">
                                     <p>SUB TOTAL</p>
                                 </div>
-                                <div class="col"></div>
+                                <div style={{ color: "red", fontWeight: "bold" }} class="col align-center"> {totalPrice} </div>
                             </div>
-                            {/* <div class="row layout-inline">
-                                <div class="col">
-                                    <p>Shipping</p>
-                                </div>
-                                <div class="col"></div>
-                            </div>
-                            <div class="row layout-inline">
-                                <div class="col">
-                                    <p>Total</p>
-                                </div>
-                                <div class="col"></div>
-                            </div> */}
                         </div>
                     </div>
+                </div>
+                <div className="checkout_btn">
+                    <Button className='btn'> Checkout </Button>
                 </div>
             </div>
         </>

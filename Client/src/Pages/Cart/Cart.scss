@@ -81,6 +81,9 @@
     .align-center {
         text-align: center;
     }
+    .align-end {
+        text-align: end;
+    }
 
     .th {
         background: #25282A;
@@ -108,7 +111,7 @@
     }
 
     .col-pro {
-        width: 44%;
+        width: 30%;
     }
 
     .col-pro>* {
@@ -209,6 +212,16 @@
         img {
             max-width: 100%;
             margin-bottom: 1em;
+        }
+    }
+
+    .checkout_btn{
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 2rem;
+        
+        .btn{
+            background-color: #25282A;
         }
     }
 

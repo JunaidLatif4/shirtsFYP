@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom"
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
@@ -11,11 +12,17 @@ import "./WhatFits.scss";
 
 const WhatFits = (props) => {
   let dispatch = useDispatch()
+  let history = useHistory()
 
   let cartData = useSelector((state) => state.cartData)
+  let userData = useSelector((state) => state.userData)
 
   const addToCart = (data) => {
-    dispatch(addToCartData(data))
+    if (userData) {
+      dispatch(addToCartData(data))
+    } else {
+      alert("Please Login to continue")
+    }
   }
 
   return (
@@ -54,9 +61,7 @@ const WhatFits = (props) => {
             )
           })}
         </div>
-
-        <button className="btnViewAll">View all</button>
-
+        <button onClick={() => history.push("/products")} className="btnViewAll">View all</button>
       </div>
     </>
   );

@@ -50,6 +50,11 @@ const Navbar = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const logOut = () => {
+    localStorage.clear()
+    window.location.href = "/"
+  }
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
@@ -82,7 +87,18 @@ const Navbar = () => {
             {
               userData ?
                 <>
-
+                  <div className="get">
+                    <button onClick={logOut}>Sign Out</button>
+                  </div>
+                  {/* <div className="cart_nav" onClick={handleOpen}>
+                    {
+                      cartData && cartData.length >= 1 &&
+                      <div className="count">
+                        {cartData.length}
+                      </div>
+                    }
+                    <FaShoppingCart />
+                  </div> */}
                 </>
                 :
                 <>
@@ -118,13 +134,14 @@ const Navbar = () => {
             </NavLink>
             <div className="nav_items">About us</div>
             <div className="nav_items">Contact us</div>
+            <div onClick={() => history.push("/products")} className="nav_items">Products</div>
           </div>
           <div className="nav_content_right">
             {
               userData ?
                 <>
                   <div className="get">
-                    <button onClick={() => history.push("/signup")}>Sign Out</button>
+                    <button onClick={logOut}>Sign Out</button>
                   </div>
                   <div className="cart_nav" onClick={handleOpen}>
                     {
@@ -173,19 +190,19 @@ const Navbar = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-          {/* <Typography id="modal-modal-title" variant="h6" component="h2">
+        {/* <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
           </Typography> */}
-          <div className="cart_model">
-            <div className="heading">
-              <p>Shoping Cart</p>
-              <p className='icon' onClick={handleClose}> <AiOutlineClose/> </p>
-            </div>
-          <Cart/>
+        <div className="cart_model">
+          <div className="heading">
+            <p>Shoping Cart</p>
+            <p className='icon' onClick={handleClose}> <AiOutlineClose /> </p>
           </div>
+          <Cart />
+        </div>
       </Modal>
     </>
   );
