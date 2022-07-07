@@ -25,7 +25,7 @@ const GettingPaymentsAPI = async (id = null) => {
     return resolved
 }
 
-const CreatePaymentAPI = async (data) => {
+const CreatePaymentAPI = async (price , data , user) => {
     let resolved = {
         error: null,
         data: null
@@ -33,8 +33,13 @@ const CreatePaymentAPI = async (data) => {
 
     try {
         let res = await axios({
-            url: id != null ? `/api/product?id=${id}` : `/api/product`,
-            method: "GET",
+            url: `/api/payment`,
+            method: "POST",
+            data:{
+                price,
+                products:data,
+                user
+            }
         })
 
         resolved.data = res.data
@@ -49,4 +54,4 @@ const CreatePaymentAPI = async (data) => {
     return resolved
 }
 
-export { GettingProductsAPI }
+export { GettingPaymentsAPI, CreatePaymentAPI }

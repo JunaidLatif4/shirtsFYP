@@ -3,7 +3,8 @@ const mongoose = require("mongoose")
 const stripe = require('stripe')("sk_test_51LItchLoNvDBf5Y4aq5egMAyOmqroc8UBBrsZLFXEh8sIJpmX2pU0tFz8HOrwRLH7U7GZmqe18bdcOmbjFRv525p00WPK5lfhi")
 
 const PaymentsModel = require("../Models/PaymentsModel")
-
+const cartModel = require("../Models/CartModel")
+const userModel = require("../Models/AuthModel")
 
 
 Router.get("/", async (req, res) => {
@@ -44,18 +45,45 @@ Router.get("/", async (req, res) => {
 })
 
 Router.post("/", async (req, res) => {
-    const { id, country } = req.query
-
+    const { price, products, user } = req.body
+    let productsId = []
     try {
+
+        const userData = await userModel.findOne({ email: user })
+
+        let process1 = products.map((data) => {
+            productsId.push(data._id)
+        })
+
+        await Promise.all(process1)
+
+        const cartData = await cartModel.create({
+            user: userData._id,
+            price,
+            products: productsId
+        })
+
+        await cartData.save()
+
+
         const paymentIntent = await stripe.paymentIntents.create({
             currency: 'USD',
-            amount: 1999,
+            amount: price * 100,
             automatic_payment_methods: { enabled: true }
         });
+        
+        const paymentData = await PaymentsModel.create({
+            user: userData._id,
+            amount: price,
+            status: "Processing",
+            cart: cartData._id
+        })
 
+        await paymentData.save()
         // Send publishable key and PaymentIntent details to client
-        res.send({
-            clientSecret: paymentIntent.client_secret,
+        res.status(200).json({
+            msg: "ClientSecret Genrated Success",
+            data: paymentIntent.client_secret,
         });
     } catch (error) {
         console.log(error);

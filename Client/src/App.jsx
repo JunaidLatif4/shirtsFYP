@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from "./Pages/Home/Home"
 import Products from './Pages/Products/Products'
+import Payment from './Pages/Payment/Payment'
 import Login from "./Pages/Register/Userlogin/Userlogin"
 import SignUp from "./Pages/Register/Signup/Signup"
 
@@ -15,6 +16,7 @@ import { GettingProductsAPI } from './API/Products'
 
 
 import 'react-toastify/dist/ReactToastify.css';
+import Completion from './Pages/Payment/Completion'
 
 
 
@@ -38,7 +40,7 @@ const App = () => {
         }
     }
 
-   
+
     useEffect(() => {
         gettingProducts()
     }, [])
@@ -58,7 +60,9 @@ const App = () => {
             />
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/products" component={Products} />
+                <Route path="/products" component={Products} />
+                <Route path="/payment" component={Payment} />
+                <Route path="/complete" component={Completion} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={SignUp} />
             </Switch>

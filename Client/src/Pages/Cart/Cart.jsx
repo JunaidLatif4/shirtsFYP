@@ -10,7 +10,7 @@ import Payment from "../Payment/Payment"
 
 import './Cart.scss'
 
-const Cart = () => {
+const Cart = (props) => {
     let history = useHistory()
     let dispatch = useDispatch()
 
@@ -46,7 +46,8 @@ const Cart = () => {
     }, [cartData])
 
     const goToCheckOut = () => {
-        history.push("/payment")
+        props.setTotalPrice(totalPrice)
+        props.setPath("checkout")
     }
 
     return (
@@ -116,7 +117,7 @@ const Cart = () => {
                     </div>
                 </div>
                 <div className="checkout_btn">
-                    <Button className='btn'> Checkout </Button>
+                    <Button onClick={goToCheckOut} className='btn'> Checkout </Button>
                 </div>
             </div>
         </>

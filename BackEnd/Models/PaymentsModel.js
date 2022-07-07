@@ -5,6 +5,10 @@ const paymentsSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "UserModel"
     },
+    cart:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "CartModel"
+    },
     ammount: {
         type: String
     },

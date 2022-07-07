@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
 
 import Box from '@mui/material/Box';
@@ -17,6 +17,7 @@ import Cart from "../../Pages/Cart/Cart"
 import { useSelector } from "react-redux"
 
 import './Navbar.scss'
+import Payment from '../../Pages/Payment/Payment';
 
 
 
@@ -48,7 +49,13 @@ const Navbar = () => {
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setPath("cart")
+    setOpen(false);
+  }
+
+  const [path, setPath] = useState("cart")
+  const [totalPrice, setTotalPrice] = useState(0)
 
   const logOut = () => {
     localStorage.clear()
@@ -190,18 +197,26 @@ const Navbar = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        {/* <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography> */}
         <div className="cart_model">
-          <div className="heading">
-            <p>Shoping Cart</p>
-            <p className='icon' onClick={handleClose}> <AiOutlineClose /> </p>
-          </div>
-          <Cart />
+          {
+            path == "cart" ?
+              <>
+                <div className="heading">
+                  <p>Shoping Cart</p>
+                  <p className='icon' onClick={handleClose}> <AiOutlineClose /> </p>
+                </div>
+                <Cart setPath={setPath} setTotalPrice={setTotalPrice} />
+              </>
+              :
+              <>
+                <div className="heading">
+                  <p>Payment</p>
+                  <p className='icon' onClick={handleClose}> <AiOutlineClose /> </p>
+                </div>
+                <Payment totalPrice={totalPrice} />
+              </>
+          }
+
         </div>
       </Modal>
     </>
