@@ -15,28 +15,28 @@ Router.post("/", async (req, res) => {
                 const hashPass = await bcrypt.compare(password, findUser.password)
                 if (hashPass) {
                     res.status(200).json({
-                        message: "User Login Success",
+                        msg: "User Login Success",
                         data: findUser.email
                     })
                 } else {
                     res.status(403).json({
-                        message: "Wrong Password",
+                        msg: "Wrong Password",
                     })
                 }
             } else {
                 res.status(404).json({
-                    message: "User not Found / invalid Email",
+                    msg: "User not Found / invalid Email",
                 })
             }
         } else {
             res.status(400).json({
-                message: "Requried Fields Missing",
+                msg: "Requried Fields Missing",
                 fields: ["Email", "Password"]
             })
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Auth",
+            msg: "Internal Server Error at Auth",
             error
         })
     }
@@ -57,24 +57,24 @@ Router.post("/add", async (req, res) => {
             await userData.save().then(() => {
                 let { password, ...other } = userData._doc
                 res.status(200).json({
-                    message: "UserCreate Success",
+                    msg: "UserCreate Success",
                     data: other
                 })
             }).catch((error) => {
                 res.status(500).json({
-                    message: "Internal Server Error at Auth",
+                    msg: "Internal Server Error at Auth",
                     error
                 })
             })
         } else {
             res.status(400).json({
-                message: "Requried Fields Missing",
+                msg: "Requried Fields Missing",
                 fields: ["Email", "Password"]
             })
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Auth",
+            msg: "Internal Server Error at Auth",
             error
         })
     }

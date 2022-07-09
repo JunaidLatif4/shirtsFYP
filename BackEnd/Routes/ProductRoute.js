@@ -19,12 +19,12 @@ Router.get("/", async (req, res) => {
                 .populate("category").populate("brand")
             if (product) {
                 res.status(200).json({
-                    message: "Product Found Success",
+                    msg: "Product Found Success",
                     data: product
                 })
             } else {
                 res.status(401).json({
-                    message: "Product not Found"
+                    msg: "Product not Found"
                 })
             }
         } else {
@@ -32,18 +32,18 @@ Router.get("/", async (req, res) => {
             .populate("category").populate("brand")
             if (products) {
                 res.status(200).json({
-                    message: "All Products Found Success",
+                    msg: "All Products Found Success",
                     data: products
                 })
             } else {
                 res.status(401).json({
-                    message: "All Products not Found"
+                    msg: "All Products not Found"
                 })
             }
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Getting Products",
+            msg: "Internal Server Error at Getting Products",
             error
         })
     }
@@ -82,13 +82,13 @@ Router.post("/", upload.fields([{ name: "img" }]), async (req, res) => {
         })
         await productData.save()
         res.status(200).json({
-            message: "Product Create Success",
+            msg: "Product Create Success",
             data: productData
         })
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Adding Product",
+            msg: "Internal Server Error at Adding Product",
             error
         })
     }
@@ -126,37 +126,37 @@ Router.put("/", upload.fields([{ name: "img" }]), async (req, res) => {
                 const updateProduct = await ProductModel.findByIdAndUpdate(id, savingData, { new: true })
                 if (updateProduct) {
                     res.status(200).json({
-                        message: "Product Update with IMGS Success",
+                        msg: "Product Update with IMGS Success",
                         data: updateProduct
                     })
                 } else {
                     res.status(401).json({
-                        message: "Product not Found"
+                        msg: "Product not Found"
                     })
                 }
             } else {
                 let updateProduct = await ProductModel.findByIdAndUpdate(id, req.body, { new: true })
                 if (updateProduct) {
                     res.status(200).json({
-                        message: "Product Update Success",
+                        msg: "Product Update Success",
                         data: updateProduct
                     })
                 } else {
                     res.status(401).json({
-                        message: "Product not Found"
+                        msg: "Product not Found"
                     })
                 }
             }
         } else {
             res.status(400).json({
-                message: "Filed Missing",
+                msg: "Filed Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Updating Product",
+            msg: "Internal Server Error at Updating Product",
             error
         })
     }
@@ -170,23 +170,23 @@ Router.delete("/", async (req, res) => {
             let deleteProduct = await ProductModel.findByIdAndDelete(id)
             if (deleteProduct) {
                 res.status(200).json({
-                    message: "Product Deleted Success",
+                    msg: "Product Deleted Success",
                     data: deleteProduct
                 })
             } else {
                 res.status(404).json({
-                    message: "Product not Found",
+                    msg: "Product not Found",
                 })
             }
         } else {
             res.status(400).json({
-                message: "Requried Fields Missing",
+                msg: "Requried Fields Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Deleting Product",
+            msg: "Internal Server Error at Deleting Product",
             error
         })
     }

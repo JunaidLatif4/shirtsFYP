@@ -13,30 +13,30 @@ Router.get("/", async (req, res) => {
             const brand = await BrandModel.findById(id)
             if (brand) {
                 res.status(200).json({
-                    message: "brand Found Success",
+                    msg: "brand Found Success",
                     data: brand
                 })
             } else {
                 res.status(401).json({
-                    message: "brand not Found"
+                    msg: "brand not Found"
                 })
             }
         } else {
             const brands = await BrandModel.find()
             if (brands) {
                 res.status(200).json({
-                    message: "All brands Found Success",
+                    msg: "All brands Found Success",
                     data: brands
                 })
             } else {
                 res.status(401).json({
-                    message: "All brands not Found"
+                    msg: "All brands not Found"
                 })
             }
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Getting brands",
+            msg: "Internal Server Error at Getting brands",
             error
         })
     }
@@ -49,13 +49,13 @@ Router.post("/", async (req, res) => {
         const brandData = await BrandModel.create(req.body)
         await brandData.save()
         res.status(200).json({
-            message: "Category Create Success",
+            msg: "Category Create Success",
             data: brandData
         })
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Adding Category",
+            msg: "Internal Server Error at Adding Category",
             error
         })
     }
@@ -69,24 +69,24 @@ Router.put("/", async (req, res) => {
             let updateCategory = await BrandModel.findByIdAndUpdate(id, req.body, { new: true })
             if (updateCategory) {
                 res.status(200).json({
-                    message: "Category Update Success",
+                    msg: "Category Update Success",
                     data: updateCategory
                 })
             } else {
                 res.status(401).json({
-                    message: "Category not Found"
+                    msg: "Category not Found"
                 })
             }
         } else {
             res.status(400).json({
-                message: "Filed Missing",
+                msg: "Filed Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Updating Category",
+            msg: "Internal Server Error at Updating Category",
             error
         })
     }
@@ -100,23 +100,23 @@ Router.delete("/", async (req, res) => {
             let deleteCategory = await BrandModel.findByIdAndDelete(id)
             if (deleteCategory) {
                 res.status(200).json({
-                    message: "Category Deleted Success",
+                    msg: "Category Deleted Success",
                     data: deleteCategory
                 })
             } else {
                 res.status(404).json({
-                    message: "Category not Found",
+                    msg: "Category not Found",
                 })
             }
         } else {
             res.status(400).json({
-                message: "Requried Fields Missing",
+                msg: "Requried Fields Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Deleting Category",
+            msg: "Internal Server Error at Deleting Category",
             error
         })
     }

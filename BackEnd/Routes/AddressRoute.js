@@ -13,24 +13,24 @@ Router.get("/", async (req, res) => {
             const address = await AddressModel.findById(id)
             if (address) {
                 res.status(200).json({
-                    message: "address Found Success",
+                    msg: "address Found Success",
                     data: address
                 })
             } else {
                 res.status(401).json({
-                    message: "address not Found"
+                    msg: "address not Found"
                 })
             }
         } else if (user) {
             const userAddress = await AddressModel.findOne({ user: user })
             if (userAddress) {
                 res.status(200).json({
-                    message: "userAddress Found Success",
+                    msg: "userAddress Found Success",
                     data: userAddress
                 })
             } else {
                 res.status(401).json({
-                    message: "userAddress not Found"
+                    msg: "userAddress not Found"
                 })
             }
         }
@@ -38,18 +38,18 @@ Router.get("/", async (req, res) => {
             const addresses = await AddressModel.find()
             if (addresses) {
                 res.status(200).json({
-                    message: "All addresses Found Success",
+                    msg: "All addresses Found Success",
                     data: addresses
                 })
             } else {
                 res.status(401).json({
-                    message: "All addresses not Found"
+                    msg: "All addresses not Found"
                 })
             }
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Getting addresses",
+            msg: "Internal Server Error at Getting addresses",
             error
         })
     }
@@ -62,13 +62,13 @@ Router.post("/", async (req, res) => {
         const addressData = await AddressModel.create(req.body)
         await addressData.save()
         res.status(200).json({
-            message: "Address Create Success",
+            msg: "Address Create Success",
             data: addressData
         })
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Adding Address",
+            msg: "Internal Server Error at Adding Address",
             error
         })
     }
@@ -82,24 +82,24 @@ Router.put("/", async (req, res) => {
             let updateAddress = await AddressModel.findByIdAndUpdate(id, req.body, { new: true })
             if (updateAddress) {
                 res.status(200).json({
-                    message: "Address Update Success",
+                    msg: "Address Update Success",
                     data: updateAddress
                 })
             } else {
                 res.status(401).json({
-                    message: "Address not Found"
+                    msg: "Address not Found"
                 })
             }
         } else {
             res.status(400).json({
-                message: "Filed Missing",
+                msg: "Filed Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            message: "Internal Server Error at Updating Address",
+            msg: "Internal Server Error at Updating Address",
             error
         })
     }
@@ -113,23 +113,23 @@ Router.delete("/", async (req, res) => {
             let deleteAddress = await AddressModel.findByIdAndDelete(id)
             if (deleteAddress) {
                 res.status(200).json({
-                    message: "Address Deleted Success",
+                    msg: "Address Deleted Success",
                     data: deleteAddress
                 })
             } else {
                 res.status(404).json({
-                    message: "Address not Found",
+                    msg: "Address not Found",
                 })
             }
         } else {
             res.status(400).json({
-                message: "Requried Fields Missing",
+                msg: "Requried Fields Missing",
                 fields: ["ID"]
             })
         }
     } catch (error) {
         res.status(500).json({
-            message: "Internal Server Error at Deleting Address",
+            msg: "Internal Server Error at Deleting Address",
             error
         })
     }

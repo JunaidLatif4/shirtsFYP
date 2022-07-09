@@ -4,6 +4,9 @@ import { Switch, Route } from 'react-router-dom'
 import Home from "./Pages/Home/Home"
 import Products from './Pages/Products/Products'
 import Payment from './Pages/Payment/Payment'
+import About from './Pages/About/About'
+import Contact from './Pages/Contact/Contact'
+import Completion from './Pages/Payment/Completion'
 import Login from "./Pages/Register/Userlogin/Userlogin"
 import SignUp from "./Pages/Register/Signup/Signup"
 
@@ -16,7 +19,6 @@ import { GettingProductsAPI } from './API/Products'
 
 
 import 'react-toastify/dist/ReactToastify.css';
-import Completion from './Pages/Payment/Completion'
 
 
 
@@ -63,6 +65,8 @@ const App = () => {
                 <Route path="/products" component={Products} />
                 <Route path="/payment" component={Payment} />
                 <Route path="/complete" component={Completion} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={SignUp} />
             </Switch>

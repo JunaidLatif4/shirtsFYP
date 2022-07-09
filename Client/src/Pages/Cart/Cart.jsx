@@ -81,9 +81,11 @@ const Cart = (props) => {
 
                                             <div class="col col-price col-numeric align-center ">
                                                 <select name="" id="">
+                                                    <option value="XS">XS</option>
                                                     <option value="S">Small</option>
                                                     <option value="M">Medium</option>
                                                     <option value="L">Large</option>
+                                                    <option value="XL">XL</option>
                                                 </select>
                                             </div>
                                             <div class="col col-price col-numeric align-center ">

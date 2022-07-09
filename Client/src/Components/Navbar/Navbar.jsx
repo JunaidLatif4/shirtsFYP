@@ -89,8 +89,8 @@ const Navbar = () => {
 
               <div className='items'>Home</div>
             </NavLink>
-            <div className='items'>About us</div>
-            <div className='items'>Contact us</div>
+            <div onClick={() => history.push("/about")} className='items'>About us</div>
+            <div onClick={() => history.push("/contact")} className='items'>Contact us</div>
             {
               userData ?
                 <>
@@ -139,8 +139,8 @@ const Navbar = () => {
 
               <div className="nav_items">Home</div>
             </NavLink>
-            <div className="nav_items">About us</div>
-            <div className="nav_items">Contact us</div>
+            <div onClick={() => history.push("/about")} className="nav_items">About us</div>
+            <div onClick={() => history.push("/contact")} className="nav_items">Contact us</div>
             <div onClick={() => history.push("/products")} className="nav_items">Products</div>
           </div>
           <div className="nav_content_right">
