@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(cors())
 env.config()
 
-mongoose.connect(process.env.MONGO_URL).then(() => {
+mongoose.connect(process.env.MONGO_URL_J).then(() => {
     console.log("DataBase Connected");
 }).catch((err) => {
     console.log("DataBase Connection Fail ==== ", err);

@@ -8,6 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import PC1 from '../../../../Assets/images/01.png'
+import PC2 from '../../../../Assets/images/02.png'
+import PC3 from '../../../../Assets/images/03.png'
 import men1 from '../../../../Assets/images/images/men 1.jpg'
 import men2 from '../../../../Assets/images/images/men 2.jpg'
 import women1 from '../../../../Assets/images/images/women 1.jpg'
@@ -81,6 +84,9 @@ const DressCodeMen = () => {
         <Slider {...settings}>
           <div>
             <div className="mainContainerDressCode">
+              <div className="back_img">
+                <img src={PC1} alt="" />
+              </div>
               <div className="innerContainerDressCode">
                 <div className="dressCodeLeft">
                   <img src={dressCodePic} alt="" className="dressCodeImg" />
@@ -105,6 +111,9 @@ const DressCodeMen = () => {
           </div>
           <div>
             <div className="mainContainerDressCode">
+            <div className="back_img">
+                <img src={PC2} alt="" />
+              </div>
               <div className="innerContainerDressCode">
                 <div className="dressCodeLeft">
                   <img src={dressCodePic} alt="" className="dressCodeImg" />
@@ -129,30 +138,9 @@ const DressCodeMen = () => {
           </div>
           <div>
             <div className="mainContainerDressCode">
-              <div className="innerContainerDressCode">
-                <div className="dressCodeLeft">
-                  <img src={dressCodePic} alt="" className="dressCodeImg" />
-                </div>
-
-                <div className="dressCodeRights">
-                  <div className="verticalLine"></div>
-                  <div className="topStylishTailTxtBtn">
-                    <p className="personalStylingTxt">
-                      Personal <span className="spPersonalStyling">Styling</span>,
-                      tailored <span className="spPersonalStyling">just</span> for{" "}
-                      <span className="spPersonalStyling">you.</span>
-                    </p>
-
-                    <button className="btnTakeStyleQuiz" onClick={navigateClicked}>
-                      Take your style quiz
-                    </button>
-                  </div>
-                </div>
+            <div className="back_img">
+                <img src={PC3} alt="" />
               </div>
-            </div>
-          </div>
-          <div>
-            <div className="mainContainerDressCode">
               <div className="innerContainerDressCode">
                 <div className="dressCodeLeft">
                   <img src={dressCodePic} alt="" className="dressCodeImg" />
