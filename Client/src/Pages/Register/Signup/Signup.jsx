@@ -3,6 +3,8 @@ import { NavLink, useHistory } from 'react-router-dom'
 
 import logo from "../../../Assets/images/adminlogo.png";
 
+import { BiShow, BiHide } from "react-icons/bi"
+
 import { toast } from "react-toastify";
 import { RegisterAPI } from "../../../API/Auth";
 
@@ -19,6 +21,8 @@ const Signup = () => {
     password: ""
 
   })
+
+  const [show, setShow] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -79,7 +83,8 @@ const Signup = () => {
             <div className="email_input">
               <div className="email_title">Create Password</div>
               <div className="email">
-                <input type="password" value={enteredData.password} name="password" onChange={handleChange} />
+                <input type={show ? "text" : "password"} value={enteredData.password} name="password" onChange={handleChange} />
+              <span className="input_icon" onClick={() => setShow(!show)}> {show ? <BiHide /> : <BiShow />} </span>
               </div>
             </div>
           </div>
